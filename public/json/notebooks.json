@@ -1,0 +1,907 @@
+{
+    "synckey": 1718868299,
+    "totalBookCount": 17,
+    "noBookReviewCount": 1,
+    "books": [
+        {
+            "bookId": "26271721",
+            "book": {
+                "bookId": "26271721",
+                "title": "SRE：Google运维解密",
+                "author": "贝特西·拜尔等",
+                "translator": "孙宇聪",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/721/26271721/s_26271721.jpg",
+                "version": 1470351715,
+                "format": "epub",
+                "type": 0,
+                "price": 27.0,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 1,
+                "payType": 1048577,
+                "centPrice": 2700,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "extra_type": 1,
+                "cpid": 48492,
+                "publishTime": "2016-10-01 00:00:00",
+                "centPrice": 2700,
+                "categories": [
+                    {
+                        "categoryId": 700000,
+                        "subCategoryId": 700003,
+                        "categoryType": 0,
+                        "title": "计算机-计算机综合"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 250,
+                "paperBook": {
+                    "skuId": ""
+                },
+                "copyrightChapterUids": [
+                    2
+                ],
+                "blockSaveImg": 1,
+                "language": "zh",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 2,
+            "reviewLikeCount": 4,
+            "reviewCommentCount": 0,
+            "noteCount": 2,
+            "bookmarkCount": 1,
+            "sort": 1717850925
+        },
+        {
+            "bookId": "831446",
+            "book": {
+                "bookId": "831446",
+                "title": "自卑与超越",
+                "author": "阿尔弗雷德·阿德勒",
+                "translator": "徐姗",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/446/831446/s_831446.jpg",
+                "version": 622834447,
+                "format": "epub",
+                "type": 0,
+                "price": 17.99,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 1,
+                "payType": 4097,
+                "centPrice": 1799,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "extra_type": 5,
+                "cpid": 16796623,
+                "publishTime": "2016-06-01 00:00:00",
+                "centPrice": 1799,
+                "categories": [
+                    {
+                        "categoryId": 800000,
+                        "subCategoryId": 800004,
+                        "categoryType": 0,
+                        "title": "心理-心理学研究"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 18,
+                "paperBook": {
+                    "skuId": "11977214"
+                },
+                "copyrightChapterUids": [
+                    19
+                ],
+                "blockSaveImg": 0,
+                "language": "zh-CN",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 1,
+            "bookmarkCount": 0,
+            "sort": 1716165646
+        },
+        {
+            "bookId": "27371406",
+            "book": {
+                "bookId": "27371406",
+                "title": "深入理解Java虚拟机：JVM高级特性与最佳实践（第3版）",
+                "author": "周志明",
+                "cover": "https://cdn.weread.qq.com/weread/cover/38/yuewen_27371406/s_yuewen_273714061712826901.jpg",
+                "version": 1219866467,
+                "format": "epub",
+                "type": 0,
+                "price": 31.99,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 1,
+                "payType": 1048577,
+                "centPrice": 3199,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "extra_type": 1,
+                "cpid": 4157477,
+                "publishTime": "2021-05-16 00:00:00",
+                "centPrice": 3199,
+                "categories": [
+                    {
+                        "categoryId": 700000,
+                        "subCategoryId": 700002,
+                        "categoryType": 0,
+                        "title": "计算机-编程设计"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 295,
+                "paperBook": {
+                    "skuId": "12607299"
+                },
+                "copyrightChapterUids": [
+                    111
+                ],
+                "blockSaveImg": 0,
+                "language": "zh-wr",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 1,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 0,
+            "sort": 1715827445
+        },
+        {
+            "bookId": "674044",
+            "book": {
+                "bookId": "674044",
+                "title": "我与地坛",
+                "author": "史铁生",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/44/674044/s_674044.jpg",
+                "version": 318012976,
+                "format": "epub",
+                "type": 0,
+                "price": 9.99,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 1,
+                "payType": 4097,
+                "centPrice": 999,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "extra_type": 5,
+                "cpid": -2571052,
+                "publishTime": "2011-04-01 00:00:00",
+                "centPrice": 999,
+                "categories": [
+                    {
+                        "categoryId": 300000,
+                        "subCategoryId": 300005,
+                        "categoryType": 0,
+                        "title": "文学-散文杂著"
+                    }
+                ],
+                "hasLecture": 1,
+                "lastChapterIdx": 14,
+                "paperBook": {
+                    "skuId": ""
+                },
+                "copyrightChapterUids": [
+                    2
+                ],
+                "blockSaveImg": 0,
+                "language": "zh-CN",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 1,
+            "sort": 1715128734
+        },
+        {
+            "bookId": "839185",
+            "book": {
+                "bookId": "839185",
+                "title": "月亮与六便士",
+                "author": "毛姆",
+                "translator": "苏福忠",
+                "cover": "https://cdn.weread.qq.com/weread/cover/0/YueWen_839185/s_YueWen_839185.jpg",
+                "version": 1781980149,
+                "format": "epub",
+                "type": 0,
+                "price": 5.99,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 1,
+                "payType": 4097,
+                "centPrice": 599,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "extra_type": 1,
+                "cpid": 18593790,
+                "publishTime": "2016-03-14 00:00:00",
+                "centPrice": 599,
+                "categories": [
+                    {
+                        "categoryId": 300000,
+                        "subCategoryId": 300013,
+                        "categoryType": 0,
+                        "title": "文学-外国文学"
+                    },
+                    {
+                        "categoryId": 300000,
+                        "subCategoryId": 300014,
+                        "categoryType": 0,
+                        "title": "文学-世界名著"
+                    }
+                ],
+                "hasLecture": 1,
+                "lastChapterIdx": 61,
+                "paperBook": {
+                    "skuId": "11891942"
+                },
+                "copyrightChapterUids": [
+                    2
+                ],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 1,
+            "sort": 1715057337
+        },
+        {
+            "bookId": "834464",
+            "book": {
+                "bookId": "834464",
+                "title": "活着",
+                "author": "余华",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/464/834464/s_834464.jpg",
+                "version": 2055529619,
+                "format": "epub",
+                "type": 0,
+                "price": 29.99,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 1,
+                "payType": 1048577,
+                "centPrice": 2999,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "extra_type": 5,
+                "cpid": 6871225,
+                "publishTime": "2012-08-01 00:00:00",
+                "centPrice": 2999,
+                "categories": [
+                    {
+                        "categoryId": 300000,
+                        "subCategoryId": 300004,
+                        "categoryType": 0,
+                        "title": "文学-经典作品"
+                    }
+                ],
+                "hasLecture": 1,
+                "lastChapterIdx": 12,
+                "paperBook": {
+                    "skuId": "11090643"
+                },
+                "copyrightChapterUids": [
+                    13
+                ],
+                "blockSaveImg": 0,
+                "language": "zh-CN",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 1,
+            "bookmarkCount": 0,
+            "sort": 1714954740
+        },
+        {
+            "bookId": "25672246",
+            "book": {
+                "bookId": "25672246",
+                "title": "都市之我活了万万年",
+                "author": "翩然烟雨中",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/246/25672246/s_25672246.jpg",
+                "version": 0,
+                "format": "txt",
+                "type": 0,
+                "price": -1,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 2,
+                "payType": 8194,
+                "centPrice": 13339,
+                "finished": 0,
+                "free": 0,
+                "mcardDiscount": 20,
+                "ispub": 2,
+                "cpid": 36873,
+                "publishTime": "",
+                "realPrice": 13339,
+                "centPrice": 13339,
+                "categories": [
+                    {
+                        "categoryId": 1900000,
+                        "subCategoryId": 1900002,
+                        "categoryType": 1,
+                        "title": "男生小说-都市小说"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 1362,
+                "paperBook": {
+                    "skuId": ""
+                },
+                "copyrightChapterUids": [],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 1,
+            "sort": 1642951679
+        },
+        {
+            "bookId": "35529386",
+            "book": {
+                "bookId": "35529386",
+                "title": "签到天师宫，下山已无敌",
+                "author": "我不是小号",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/386/35529386/s_35529386.jpg",
+                "version": 0,
+                "format": "txt",
+                "type": 0,
+                "price": -1,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 2,
+                "payType": 8194,
+                "centPrice": 8541,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 20,
+                "ispub": 2,
+                "cpid": 5,
+                "publishTime": "",
+                "realPrice": 8541,
+                "centPrice": 8541,
+                "categories": [
+                    {
+                        "categoryId": 1900000,
+                        "subCategoryId": 1900001,
+                        "categoryType": 1,
+                        "title": "男生小说-东方玄幻"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 645,
+                "paperBook": {
+                    "skuId": ""
+                },
+                "copyrightChapterUids": [],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 1,
+            "sort": 1620835529
+        },
+        {
+            "bookId": "24345948",
+            "book": {
+                "bookId": "24345948",
+                "title": "一剑独尊",
+                "author": "青鸾峰上",
+                "cover": "https://cdn.weread.qq.com/weread/cover/83/YueWen_24345948/s_YueWen_24345948.jpg",
+                "version": 0,
+                "format": "txt",
+                "type": 0,
+                "price": -1,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 1,
+                "payType": 1048578,
+                "centPrice": 15095,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 20,
+                "ispub": 2,
+                "extra_type": 1,
+                "cpid": -1044052,
+                "publishTime": "2020-01-09 00:00:00",
+                "realPrice": 15095,
+                "centPrice": 15095,
+                "categories": [
+                    {
+                        "categoryId": 1900000,
+                        "subCategoryId": 1900001,
+                        "categoryType": 1,
+                        "title": "男生小说-东方玄幻"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 3049,
+                "paperBook": {
+                    "skuId": ""
+                },
+                "copyrightChapterUids": [],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 1,
+            "sort": 1620116574
+        },
+        {
+            "bookId": "31583528",
+            "book": {
+                "bookId": "31583528",
+                "title": "我在大唐有后台",
+                "author": "山下出水",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/528/31583528/s_31583528.jpg",
+                "version": 0,
+                "format": "txt",
+                "type": 0,
+                "price": -1,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 2,
+                "payType": 8194,
+                "centPrice": 6325,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 20,
+                "ispub": 2,
+                "cpid": 5,
+                "publishTime": "",
+                "realPrice": 6325,
+                "centPrice": 6325,
+                "categories": [
+                    {
+                        "categoryId": 1900000,
+                        "subCategoryId": 1900008,
+                        "categoryType": 1,
+                        "title": "男生小说-历史架空"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 479,
+                "paperBook": {
+                    "skuId": ""
+                },
+                "copyrightChapterUids": [],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 1,
+            "sort": 1600217405
+        },
+        {
+            "bookId": "20815544",
+            "book": {
+                "bookId": "20815544",
+                "title": "奶爸的异界餐厅",
+                "author": "轻语江湖",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/544/20815544/s_20815544.jpg",
+                "version": 0,
+                "format": "txt",
+                "type": 0,
+                "price": -1,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 2,
+                "payType": 8194,
+                "centPrice": 24254,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 20,
+                "ispub": 2,
+                "cpid": 5,
+                "publishTime": "",
+                "realPrice": 24254,
+                "centPrice": 24254,
+                "categories": [
+                    {
+                        "categoryId": 1900000,
+                        "subCategoryId": 1900003,
+                        "categoryType": 1,
+                        "title": "男生小说-仙侠武侠"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 2573,
+                "paperBook": {
+                    "skuId": ""
+                },
+                "copyrightChapterUids": [],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 1,
+            "sort": 1585267934
+        },
+        {
+            "bookId": "22123195",
+            "book": {
+                "bookId": "22123195",
+                "title": "夺天武帝",
+                "author": "九鹞",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/195/22123195/s_22123195.jpg",
+                "version": 0,
+                "format": "txt",
+                "type": 0,
+                "price": -1,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 2,
+                "payType": 8194,
+                "centPrice": 3352,
+                "finished": 0,
+                "free": 0,
+                "mcardDiscount": 20,
+                "ispub": 2,
+                "cpid": 1,
+                "publishTime": "",
+                "realPrice": 3352,
+                "centPrice": 3352,
+                "categories": [
+                    {
+                        "categoryId": 1900000,
+                        "subCategoryId": 1900004,
+                        "categoryType": 1,
+                        "title": "男生小说-异界大陆"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 363,
+                "paperBook": {
+                    "skuId": ""
+                },
+                "copyrightChapterUids": [],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 1,
+            "sort": 1557729444
+        },
+        {
+            "bookId": "928559",
+            "book": {
+                "bookId": "928559",
+                "title": "Python网络爬虫从入门到实践",
+                "author": "唐松 陈智铨",
+                "cover": "https://cdn.weread.qq.com/weread/cover/30/YueWen_928559/s_YueWen_928559.jpg",
+                "version": 1363167831,
+                "format": "epub",
+                "type": 0,
+                "price": 20.0,
+                "originalPrice": 0,
+                "soldout": 1,
+                "bookStatus": 1,
+                "payType": 1,
+                "centPrice": 2000,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "extra_type": 1,
+                "cpid": 0,
+                "publishTime": "2017-09-01 00:00:00",
+                "centPrice": 2000,
+                "categories": [
+                    {
+                        "categoryId": 700000,
+                        "subCategoryId": 700002,
+                        "categoryType": 0,
+                        "title": "计算机-编程设计"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 87,
+                "paperBook": {
+                    "skuId": "12180379"
+                },
+                "copyrightChapterUids": [
+                    2
+                ],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": true,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 0,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 1,
+            "sort": 1546426812
+        },
+        {
+            "bookId": "817910",
+            "book": {
+                "bookId": "817910",
+                "title": "厚黑学 大全集",
+                "author": "翟文明 李宗吾",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/910/817910/s_817910.jpg",
+                "version": 1006721844,
+                "format": "epub",
+                "type": 0,
+                "price": 8.05,
+                "originalPrice": 0,
+                "soldout": 1,
+                "bookStatus": 1,
+                "payType": 1,
+                "centPrice": 805,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "extra_type": 1,
+                "cpid": 0,
+                "publishTime": "2009-11-01 00:00:00",
+                "centPrice": 805,
+                "categories": [
+                    {
+                        "categoryId": 600000,
+                        "subCategoryId": 600002,
+                        "categoryType": 0,
+                        "title": "哲学宗教-伦理学"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 41,
+                "paperBook": {
+                    "skuId": "10178500"
+                },
+                "copyrightChapterUids": [
+                    2
+                ],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": true,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 1,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 0,
+            "sort": 1543451417
+        },
+        {
+            "bookId": "915101",
+            "book": {
+                "bookId": "915101",
+                "title": "当你的才华还撑不起你的梦想时",
+                "author": "特立独行的猫",
+                "cover": "https://cdn.weread.qq.com/weread/cover/29/YueWen_915101/s_YueWen_915101.jpg",
+                "version": 1422967731,
+                "format": "epub",
+                "type": 0,
+                "price": 9.9,
+                "originalPrice": 0,
+                "soldout": 0,
+                "bookStatus": 1,
+                "payType": 1048577,
+                "centPrice": 990,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "extra_type": 5,
+                "cpid": 5267817,
+                "publishTime": "2016-01-01 00:00:00",
+                "centPrice": 990,
+                "categories": [
+                    {
+                        "categoryId": 1000000,
+                        "subCategoryId": 1000002,
+                        "categoryType": 0,
+                        "title": "个人成长-励志成长"
+                    }
+                ],
+                "hasLecture": 0,
+                "lastChapterIdx": 69,
+                "paperBook": {
+                    "skuId": "11796725"
+                },
+                "copyrightChapterUids": [
+                    70
+                ],
+                "blockSaveImg": 0,
+                "language": "zh-CN",
+                "hideUpdateTime": false,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 1,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 0,
+            "sort": 1531355945
+        },
+        {
+            "bookId": "814447",
+            "book": {
+                "bookId": "814447",
+                "title": "人性的弱点",
+                "author": "卡耐基",
+                "translator": "林杰",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/447/814447/s_814447.jpg",
+                "version": 673267963,
+                "format": "epub",
+                "type": 0,
+                "price": 0,
+                "originalPrice": 0,
+                "soldout": 1,
+                "bookStatus": 1,
+                "payType": 33,
+                "centPrice": 0,
+                "finished": 1,
+                "free": 1,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "cpid": 0,
+                "publishTime": "2016-03-21 00:00:00",
+                "centPrice": 0,
+                "categories": [
+                    {
+                        "categoryId": 1000000,
+                        "subCategoryId": 1000002,
+                        "categoryType": 0,
+                        "title": "个人成长-励志成长"
+                    }
+                ],
+                "hasLecture": 1,
+                "lastChapterIdx": 93,
+                "paperBook": {
+                    "skuId": ""
+                },
+                "copyrightChapterUids": [
+                    2
+                ],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": true,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 3,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 0,
+            "bookmarkCount": 0,
+            "sort": 1496584574
+        },
+        {
+            "bookId": "244786",
+            "book": {
+                "bookId": "244786",
+                "title": "从你的全世界路过",
+                "author": "张嘉佳",
+                "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/786/244786/s_244786.jpg",
+                "version": 1387503977,
+                "format": "epub",
+                "type": 0,
+                "price": 17.99,
+                "originalPrice": 0,
+                "soldout": 1,
+                "bookStatus": 1,
+                "payType": 1,
+                "centPrice": 1799,
+                "finished": 1,
+                "free": 0,
+                "mcardDiscount": 0,
+                "ispub": 1,
+                "extra_type": 1,
+                "cpid": 0,
+                "publishTime": "2013-11-01 00:00:00",
+                "centPrice": 1799,
+                "categories": [
+                    {
+                        "categoryId": 100000,
+                        "subCategoryId": 100001,
+                        "categoryType": 0,
+                        "title": "精品小说-社会小说"
+                    }
+                ],
+                "authorVids": "400330569",
+                "hasLecture": 0,
+                "lastChapterIdx": 49,
+                "paperBook": {
+                    "skuId": ""
+                },
+                "copyrightChapterUids": [
+                    2
+                ],
+                "blockSaveImg": 0,
+                "language": "zh",
+                "hideUpdateTime": true,
+                "isEPUBComics": 0,
+                "webBookControl": 0
+            },
+            "reviewCount": 1,
+            "reviewLikeCount": 0,
+            "reviewCommentCount": 0,
+            "noteCount": 1,
+            "bookmarkCount": 0,
+            "sort": 1490182533
+        }
+    ]
+}

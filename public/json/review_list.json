@@ -1,0 +1,181 @@
+{
+    "synckey": 1714910527,
+    "totalCount": 2,
+    "reviews": [
+        {
+            "reviewId": "50157_7NNANtgmD",
+            "review": {
+                "bookId": "26271721",
+                "content": "服务质量",
+                "bookVersion": 1470351714,
+                "range": "1729-1732",
+                "abstract": "SLO",
+                "type": 1,
+                "chapterUid": 13,
+                "reviewId": "50157_7NNANtgmD",
+                "userVid": 50157,
+                "topics": [],
+                "createTime": 1703756778,
+                "contextAbstract": "盖它们。\n在保障服务SLO的前提下最大化",
+                "isLike": 0,
+                "isReposted": 0,
+                "book": {
+                    "bookId": "26271721",
+                    "format": "epub",
+                    "version": 1470351715,
+                    "soldout": 0,
+                    "bookStatus": 1,
+                    "type": 0,
+                    "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/721/26271721/s_26271721.jpg",
+                    "title": "SRE：Google运维解密",
+                    "author": "贝特西·拜尔等",
+                    "translator": "孙宇聪",
+                    "payType": 1048577
+                },
+                "chapterIdx": 13,
+                "chapterTitle": "SRE方法论",
+                "author": {
+                    "userVid": 50157,
+                    "name": "顿挫",
+                    "avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/ASgUMhoyLPoiasRJxPfExKZJgaEm5qlSq4bXgM2ysxKXfAXYtpF0VngdA9aE4TQqHv6f49fRTTVFI0weOia6FTGibiarDkcGHYwDQcP3W9mYvyk/132",
+                    "isFollowing": 1,
+                    "isFollower": 1,
+                    "isBlacking": 0,
+                    "isBlackBy": 0,
+                    "isHide": 1,
+                    "isV": 0,
+                    "roleTags": [],
+                    "followPromote": "",
+                    "signature": "",
+                    "medalInfo": {
+                        "id": "M3-0-1000",
+                        "desc": "阅读天数",
+                        "title": "阅读天数",
+                        "levelIndex": 4
+                    }
+                }
+            },
+            "likesCount": 4,
+            "likes": [
+                {
+                    "userVid": 185519801,
+                    "name": "青松傲雪",
+                    "avatar": "https://weread-picture-1258476243.file.myqcloud.com/avatar/15450.png",
+                    "isFollowing": 0,
+                    "isFollower": 0,
+                    "isBlacking": 0,
+                    "isBlackBy": 0,
+                    "isHide": 1,
+                    "nick": "青松傲雪",
+                    "isV": 0,
+                    "roleTags": [],
+                    "followPromote": "",
+                    "signature": ""
+                },
+                {
+                    "userVid": 123379024,
+                    "name": "许愿树",
+                    "avatar": "https://weread-picture-1258476243.file.myqcloud.com/avatar/22198.png",
+                    "isFollowing": 0,
+                    "isFollower": 0,
+                    "isBlacking": 0,
+                    "isBlackBy": 0,
+                    "isHide": 1,
+                    "nick": "许愿树",
+                    "isV": 0,
+                    "roleTags": [],
+                    "followPromote": "",
+                    "signature": ""
+                },
+                {
+                    "userVid": 145828400,
+                    "name": "桂香",
+                    "avatar": "https://weread-picture-1258476243.file.myqcloud.com/avatar/10659.png",
+                    "isFollowing": 0,
+                    "isFollower": 0,
+                    "isBlacking": 0,
+                    "isBlackBy": 0,
+                    "isHide": 1,
+                    "nick": "桂香",
+                    "isV": 0,
+                    "roleTags": [],
+                    "followPromote": "",
+                    "signature": ""
+                },
+                {
+                    "userVid": 185519827,
+                    "name": "麦芽糖糖ぴ",
+                    "avatar": "https://weread-picture-1258476243.file.myqcloud.com/avatar/16270.png",
+                    "isFollowing": 0,
+                    "isFollower": 0,
+                    "isBlacking": 0,
+                    "isBlackBy": 0,
+                    "isHide": 1,
+                    "nick": "麦芽糖糖ぴ",
+                    "isV": 0,
+                    "roleTags": [],
+                    "followPromote": "",
+                    "signature": ""
+                }
+            ]
+        },
+        {
+            "reviewId": "50157_7NMpVEpEu",
+            "review": {
+                "bookId": "26271721",
+                "content": "个人觉得在开发系统的过程中，永远不要让用户对于使用有任何的限制，而应该从自身考虑，如何避免用户的某种行为导致系统错误",
+                "bookVersion": 1470351714,
+                "range": "4393-4476",
+                "abstract": "Margaret 曾经说过：“无论对一个软件系统运行原理掌握得多么彻底，也不能阻止人犯意外错误。”在这次危机过后，Margaret 之前提交的修改申请很快就被批准了。",
+                "type": 1,
+                "chapterUid": 8,
+                "reviewId": "50157_7NMpVEpEu",
+                "userVid": 50157,
+                "topics": [],
+                "createTime": 1703690021,
+                "isLike": 0,
+                "isReposted": 0,
+                "book": {
+                    "bookId": "26271721",
+                    "format": "epub",
+                    "version": 1470351715,
+                    "soldout": 0,
+                    "bookStatus": 1,
+                    "type": 0,
+                    "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/721/26271721/s_26271721.jpg",
+                    "title": "SRE：Google运维解密",
+                    "author": "贝特西·拜尔等",
+                    "translator": "孙宇聪",
+                    "payType": 1048577
+                },
+                "chapterIdx": 8,
+                "chapterTitle": "序言",
+                "author": {
+                    "userVid": 50157,
+                    "name": "顿挫",
+                    "avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/ASgUMhoyLPoiasRJxPfExKZJgaEm5qlSq4bXgM2ysxKXfAXYtpF0VngdA9aE4TQqHv6f49fRTTVFI0weOia6FTGibiarDkcGHYwDQcP3W9mYvyk/132",
+                    "isFollowing": 1,
+                    "isFollower": 1,
+                    "isBlacking": 0,
+                    "isBlackBy": 0,
+                    "isHide": 1,
+                    "isV": 0,
+                    "roleTags": [],
+                    "followPromote": "",
+                    "signature": "",
+                    "medalInfo": {
+                        "id": "M3-0-1000",
+                        "desc": "阅读天数",
+                        "title": "阅读天数",
+                        "levelIndex": 4
+                    }
+                }
+            }
+        }
+    ],
+    "removed": [],
+    "atUsers": [],
+    "refUsers": [],
+    "columns": [],
+    "hasMore": 0
+}
