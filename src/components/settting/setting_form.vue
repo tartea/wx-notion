@@ -12,9 +12,9 @@
         <el-form ref="ruleFormRef" :model="ruleForm" status-icon :rules="rules" label-width="auto"
             class="demo-ruleForm">
             <el-form-item label="同步类型" prop="pageSyncType">
-                <el-select v-model="ruleForm.pageSyncType" placeholder="数据库或者页面">
-                    <el-option label="数据库" value="database" />
-                    <el-option label="页面" value="page" />
+                <el-select v-model="ruleForm.pageSyncType" placeholder="数据库或者页面" @change="changeSelected()">
+                    <el-option label="数据库" key="database" value="database" />
+                    <el-option label="页面" key="page" value="page" />
                 </el-select>
             </el-form-item>
             <el-form-item label="名称" prop="pageTitle">
@@ -44,10 +44,8 @@
                         </span>
                         <template #dropdown>
                             <el-dropdown-menu>
-                                <el-dropdown-item command="a">Action 1</el-dropdown-item>
-                                <el-dropdown-item command="b" divided>Action 2</el-dropdown-item>
-                                <el-dropdown-item command="c" divided>Action 3</el-dropdown-item>
-                                <el-dropdown-item command="e" divided>Action 5</el-dropdown-item>
+                                <el-dropdown-item :command="item.pageId" v-for="(item, index) in pageDropList"
+                                    :key='index'> {{ item.plainTitle }}</el-dropdown-item>
                             </el-dropdown-menu>
                         </template>
                     </el-dropdown>
@@ -63,9 +61,10 @@ import { searchNotion } from '../../http/notionApi'
 import { ArrowDown } from '@element-plus/icons-vue'
 
 const ruleFormRef = ref()
-const props = defineProps(['pageTitle', 'pageSecret', 'pageId', 'uuId'])
+const props = defineProps(['pageTitle', 'pageSecret', 'pageId', 'uuId', 'pageSyncType'])
 const emit = defineEmits(['updateConfig'])
 const isShowDropNotion = ref(false)
+const pageDropList = ref([])
 
 
 const rules = reactive({
@@ -107,6 +106,7 @@ watchEffect(() => {
     ruleForm.uuId = props.uuId
 })
 
+
 // 保存
 const submitForm = (formEl) => {
     if (!formEl) return
@@ -121,14 +121,52 @@ const deleteForm = () => {
     emit('deleteConfig', { ...ruleForm })
 }
 const connectPage = (formEl) => {
+    // 清空操作
+    pageDropList.value = []
     if (!formEl) return
     formEl.validateField('pageSyncType', (pageSyncTypeValid) => {
         if (pageSyncTypeValid) {
             formEl.validateField('pageSecret', async (pageSecretValid) => {
                 if (pageSecretValid) {
-                    isShowDropNotion.value = true
-                    // const responseData = await searchNotion(ruleForm.pageSyncType, ruleForm.pageSecret);
-                    // console.log(responseData);
+                    const loading = ElLoading.service({
+                        lock: true,
+                        text: "获取页面中...",
+                        background: "rgba(0, 0, 0, 0.7)",
+                    });
+                    try {
+                        const responseData = await searchNotion(ruleForm.pageSyncType, ruleForm.pageSecret);
+                        if (responseData && responseData.results && responseData.results.length > 0) {
+                            if (ruleForm.pageSyncType === 'page') {
+                                for (const index in responseData.results) {
+                                    const result = responseData.results[index]
+                                    const type = result.parent.type
+                                    let plainTitle = ''
+                                    if (type != 'database_id') {
+                                        plainTitle = result?.properties?.title?.title[0]?.plain_text | ''
+                                    } else {
+                                        plainTitle = result?.properties?.Name?.title[0]?.plain_text | ''
+                                    }
+                                    pageDropList.value.push({
+                                        pageId: result.id,
+                                        plainTitle: plainTitle
+                                    })
+
+                                }
+                            } else if (ruleForm.pageSyncType === 'database') {
+                                for (const index in responseData.results) {
+                                    const result = responseData.results[index]
+                                    pageDropList.value.push({
+                                        pageId: result.id,
+                                        plainTitle: result?.title[0]?.plain_text | ''
+                                    })
+                                }
+                            }
+                        }
+                        isShowDropNotion.value = true
+                    } finally {
+                        loading.close();
+                    }
+
                 }
             })
         }
@@ -136,7 +174,11 @@ const connectPage = (formEl) => {
 
 }
 const handleCommand = (commandValue) => {
-    ruleForm.pageId =commandValue
+    ruleForm.pageId = commandValue
+}
+/// 情况pageId
+const changeSelected = () => {
+    ruleForm.pageId = ''
 }
 
 </script>

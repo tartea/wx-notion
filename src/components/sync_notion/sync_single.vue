@@ -91,8 +91,7 @@ const syncToNotion = async (config) => {
         }]
 
 
-        locationUrl.value = await syncPage(config.pageId, config.pageSecret, props.bookTitle, props.bookAuthor, props.bookCover, chapterList)
-        loading.close();
+        locationUrl.value = await syncPage(config.pageId, config.pageSecret, props.bookTitle, props.bookAuthor, props.bookCover, config.pageSyncType, chapterList)
         isShowSync.value = true
     } finally {
         loading.close();

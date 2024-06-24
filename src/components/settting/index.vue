@@ -1,4 +1,3 @@
-
 <template>
     <div class="content">
         <div class="wx-header">
@@ -14,8 +13,9 @@
 
         <div class="wx-setting-list">
             <SettingForm v-for="(config, index) in formSettingConfig" :key="index" :pageTitle="config.pageTitle"
-                :pageSecret="config.pageSecret" :pageId="config.pageId" :uuId="config.uuId" @updateConfig="updateConfig"
-                @deleteConfig="deleteConfig"></SettingForm>
+                :pageSecret="config.pageSecret" :pageId="config.pageId" :uuId="config.uuId"
+                :pageSyncType="config.pageSyncType" @updateConfig="updateConfig" @deleteConfig="deleteConfig">
+            </SettingForm>
         </div>
         <div id="wx-add-config" @click="addConfigForm()">添加新配置</div>
     </div>
@@ -43,6 +43,7 @@ const addConfigForm = () => {
         return
     }
     formSettingConfig.value.push({
+        pageSyncType: 'page',
         pageTitle: '',
         pageSecret: '',
         pageId: '',

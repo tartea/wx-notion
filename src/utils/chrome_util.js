@@ -12,18 +12,21 @@ export const getChromeStorage = async () => {
   if (VueEnv === "TEST") {
     return [
       {
+        pageSyncType:'page',
         pageTitle: "测试页面",
         pageSecret: "secret_zokubzVrZHqSS8Y5aO5TSx3JZlPXhzZiM0EAMjbABPM",
         pageId: "2eb0922b-6e48-4d13-8bba-ab01ae50adba",
         uuId: "23432234-2423-12",
       },
       {
+        pageSyncType:'page',
         pageTitle: "测试页面1",
         pageSecret: "secret_zokubzVrZHqSS8Y5aO5TSx3JZlPXhzZiM0EAMjbABPM",
         pageId: "2eb0922b-6e48-4d13-8bba-ab01ae50adba",
         uuId: "23432234-2423-12",
       },
       {
+        pageSyncType:'database',
         pageTitle: "测试页面1",
         pageSecret: "secret_zokubzVrZHqSS8Y5aO5TSx3JZlPXhzZiM0EAMjbABPM",
         pageId: "2eb0922b-6e48-4d13-8bba-ab01ae50adba",

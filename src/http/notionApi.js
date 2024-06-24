@@ -21,6 +21,7 @@ export async function syncPage(
   bookTitle,
   bookAuthor,
   bookCover,
+  pageSyncType,
   childrenContent
 ) {
   const children = [
@@ -77,9 +78,15 @@ export async function syncPage(
       },
     };
   }
+  let parentJson = {};
+  if (pageSyncType === "page") {
+    parentJson = { page_id: page_id };
+  } else if (pageSyncType === "database") {
+    parentJson = { database_id: page_id };
+  }
 
   const reqJson = {
-    parent: { page_id: page_id },
+    parent: parentJson,
     icon: pageIcon,
     properties: {
       title: {
