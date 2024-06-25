@@ -1,23 +1,5 @@
 <template>
     <div class="content">
-        <div class="wx-header">
-            <div>
-                <el-avatar :size="60" :src="userInfoRef.avatarUrl" />
-                <el-text class="mx-1">{{ userInfoRef.authorName }}</el-text>
-            </div>
-            <router-link to="/setting">
-                <button type="button" class="wx-setting">
-                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                        stroke-linejoin="round" class="text-foreground" height="18" width="18"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
-                        </path>
-                        <circle cx="12" cy="12" r="3"></circle>
-                    </svg>
-                </button>
-            </router-link>
-        </div>
         <div class="wx-list">
             <div class="wx-card" v-for="(book, index) in books" :key="index">
                 <div class="wx-book-cover">
@@ -82,19 +64,9 @@ import { Picture as IconPicture } from '@element-plus/icons-vue';
 import { onMounted, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { getNotebooks } from '../../http/bookApi';
-import { getUserInfo } from '../../http/userApi';
 import SyncAll from '../sync_notion/sync_all';
-import { getUserVid } from '../../utils/chrome_util'
 
 const router = useRouter()
-
-const userInfoRef = reactive({
-    avatarUrl: '',
-    authorName: ''
-})
-
-const userVid = ref('')
-
 
 const dialogTableVisible = ref(false)
 const selectedBookId = ref('')
@@ -115,15 +87,6 @@ onMounted(async () => {
             })
         }
     }
-    // 获取用户ID
-    userVid.value = await getUserVid()
-
-    const userInfo = await getUserInfo(userVid.value)
-    if (userInfo) {
-        userInfoRef.authorName = userInfo.name
-        userInfoRef.avatarUrl = userInfo.avatar
-    }
-
 })
 
 const goToBookDetail = (bookDetail) => {
@@ -140,25 +103,7 @@ const showSyncDialog = (bookDetail) => {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.wx-header {
-    margin-top: 100px;
-    width: 800px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.wx-setting {
-    outline: 0.1px solid rgb(233, 230, 230);
-    width: 50px;
-    height: 50px;
-    border-radius: 9999px;
-}
-
-.wx-setting:hover {
-    cursor: pointer;
+    width: 80%;
 }
 
 .wx-list {
@@ -166,11 +111,12 @@ const showSyncDialog = (bookDetail) => {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    width: 900px;
+    width: 100%;
 }
 
 .wx-card {
-    width: 45%;
+    min-width: 330px;
+    width: 22%;
     height: 120px;
     margin: 10px;
     background-color: #f2f2ef;
@@ -238,7 +184,8 @@ const showSyncDialog = (bookDetail) => {
     display: flex;
     font-weight: bold;
     font-size: 14px;
-    width: 50%;
+    min-width: 50%;
+    max-width: 70%;
 }
 
 .wx-gap {
