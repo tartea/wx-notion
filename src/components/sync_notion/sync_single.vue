@@ -48,7 +48,7 @@
 
 <script setup>
 import { ref, defineProps, onMounted } from 'vue';
-import { getNotionConfig } from '../../utils/chrome_util'
+import { getNotionConfig, saveSyncCount, getSyncCount } from '../../utils/chrome_util'
 import { syncPage } from '../../http/notionApi'
 
 const props = defineProps(['bookTitle', 'bookAuthor', 'bookCover', 'clickCardItem', 'headerTitle'])
@@ -90,9 +90,17 @@ const syncToNotion = async (config) => {
             children: children
         }]
 
-
+        const syncCount = await getSyncCount()
+        if (syncCount <= 0) {
+            ElMessage({
+                message: '已经达到同步的上线。。。',
+                type: 'error',
+            })
+            return
+        }
         locationUrl.value = await syncPage(config.pageId, config.pageSecret, props.bookTitle, props.bookAuthor, props.bookCover, config.pageSyncType, chapterList)
         isShowSync.value = true
+        await saveSyncCount((syncCount - 1))
     } finally {
         loading.close();
     }

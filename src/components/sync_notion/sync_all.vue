@@ -48,7 +48,7 @@
 
 <script setup>
 import { ref, defineProps, onMounted } from 'vue';
-import { getNotionConfig } from '../../utils/chrome_util'
+import { getNotionConfig, saveSyncCount, getSyncCount } from '../../utils/chrome_util'
 import { syncPage } from '../../http/notionApi'
 import { getAllChapter } from '../../http/bookApi';
 
@@ -73,12 +73,33 @@ const syncToNotion = async (config) => {
     });
     try {
 
+        const syncCount = await getSyncCount()
+        if (syncCount <= 0) {
+            ElMessage({
+                message: '已经达到同步的上线。。。',
+                type: 'error',
+            })
+            return
+        }
 
         const chapterInfo = await getAllChapter(props.bookId);
+
+        let tempCount = 0;
+        for (const item of chapterInfo.chapterChildren) {
+            tempCount += item.children.filter(item => item.type === 'quote').length
+        }
+        if ((syncCount - tempCount) < 0) {
+            ElMessage({
+                message: '已经达到同步的上线。。。',
+                type: 'error',
+            })
+            return
+        }
 
         locationUrl.value = await syncPage(config.pageId, config.pageSecret, chapterInfo.bookTitle,
             chapterInfo.bookAuthor, chapterInfo.bookCover, config.pageSyncType, [...chapterInfo.chapterChildren])
         isShowSync.value = true
+        await saveSyncCount(syncCount - tempCount)
     } finally {
         loading.close();
     }
