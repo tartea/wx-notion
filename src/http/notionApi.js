@@ -1,4 +1,26 @@
-import request from "./http";
+import axios from "axios";
+
+const service = axios.create({
+  baseURL: "https://api.notion.com",
+  timeout: 5000,
+});
+// 响应拦截器
+service.interceptors.response.use(
+  (response) => {
+    // 响应后处理
+    if (response.status === 200) {
+      return Promise.resolve(response.data);
+    } else {
+      return Promise.reject(response.data);
+    }
+  },
+  (error) => {
+    ElMessage({
+      message: "请求失败请稍后重试。。。",
+      type: "error",
+    });
+  }
+);
 
 /***
  * 同步到notion
@@ -97,8 +119,7 @@ export async function syncPage(
     children: children,
   };
 
-  const responseData = await request({
-    baseURL: "https://api.notion.com",
+  const responseData = await service({
     url: "/v1/pages",
     method: "POST",
     headers: {
@@ -114,8 +135,7 @@ export async function syncPage(
  * 搜索
  */
 export async function searchNotion(filterType, secret_id) {
-  return await request({
-    baseURL: "https://api.notion.com",
+  return await service({
     url: "/v1/search",
     method: "POST",
     headers: {

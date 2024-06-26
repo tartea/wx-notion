@@ -48,7 +48,7 @@
 
 <script setup>
 import { ref, defineProps, onMounted } from 'vue';
-import { getChromeStorage } from '../../utils/chrome_util'
+import { getNotionConfig } from '../../utils/chrome_util'
 import { syncPage } from '../../http/notionApi'
 
 const props = defineProps(['bookTitle', 'bookAuthor', 'bookCover', 'clickCardItem', 'headerTitle'])
@@ -58,7 +58,7 @@ const locationUrl = ref('')
 
 
 onMounted(async () => {
-    const chromeSetting = await getChromeStorage()
+    const chromeSetting = await getNotionConfig()
     if (chromeSetting) {
         chromeSettingConfig.value = [...chromeSetting]
     }

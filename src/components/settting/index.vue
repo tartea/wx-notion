@@ -11,7 +11,7 @@
 </template>
 <script setup>
 import { onMounted, ref } from 'vue';
-import { getChromeStorage, saveChromeStorage } from '../../utils/chrome_util';
+import { getNotionConfig, saveNotionConfig } from '../../utils/chrome_util';
 import { getUuId } from '../../utils/common';
 import SettingForm from './setting_form';
 
@@ -45,7 +45,7 @@ const updateConfig = async (newConfig) => {
     const newChromeSettingConfig = chromeSettingConfig.value.filter(item => item.uuId != newConfig.uuId);
     newChromeSettingConfig.push({ ...newConfig })
     chromeSettingConfig.value = newChromeSettingConfig
-    await saveChromeStorage(newChromeSettingConfig)
+    await saveNotionConfig(newChromeSettingConfig)
     ElMessage({
         message: '保存成功！',
         type: 'success',
@@ -55,14 +55,13 @@ const deleteConfig = async (config) => {
     const dataIndex = filterIndex(formSettingConfig, config.uuId);
     if (dataIndex != -1) {
         formSettingConfig.value.splice(dataIndex, 1)
-        console.log(formSettingConfig.value);
     }
 
     const chromeIndex = filterIndex(chromeSettingConfig, config.uuId);
     if (chromeIndex != -1) {
         const newChromeSettingConfig = chromeSettingConfig.value.filter(item => item.uuId != config.uuId);
         chromeSettingConfig.value = newChromeSettingConfig
-        await saveChromeStorage(newChromeSettingConfig)
+        await saveNotionConfig(newChromeSettingConfig)
     }
 
     ElMessage({
@@ -84,7 +83,7 @@ const filterIndex = (arr, uuId) => {
 
 
 onMounted(async () => {
-    const notionSettingConfig = await getChromeStorage()
+    const notionSettingConfig = await getNotionConfig()
     if (notionSettingConfig) {
         formSettingConfig.value = [...notionSettingConfig]
         chromeSettingConfig.value = [...notionSettingConfig]

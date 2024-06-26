@@ -142,9 +142,9 @@ const connectPage = (formEl) => {
                                     const type = result.parent.type
                                     let plainTitle = ''
                                     if (type != 'database_id') {
-                                        plainTitle = result?.properties?.title?.title[0]?.plain_text | ''
+                                        plainTitle = result?.properties?.title?.title[0]?.plain_text || ''
                                     } else {
-                                        plainTitle = result?.properties?.Name?.title[0]?.plain_text | ''
+                                        plainTitle = result?.properties?.Name?.title[0]?.plain_text || ''
                                     }
                                     pageDropList.value.push({
                                         pageId: result.id,

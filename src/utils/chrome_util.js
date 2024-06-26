@@ -1,32 +1,32 @@
 const VueEnv = process.env.VUE_APP_ENV;
 
 /// 保存配置
-export const saveChromeStorage = async (config) => {
+export const saveNotionConfig = async (config) => {
   if (VueEnv != "TEST") {
     await chrome.storage.sync.set({ wx_notion_config: config });
   }
 };
 
 /// 获取配置
-export const getChromeStorage = async () => {
+export const getNotionConfig = async () => {
   if (VueEnv === "TEST") {
     return [
       {
-        pageSyncType:'page',
+        pageSyncType: "page",
         pageTitle: "测试页面",
         pageSecret: "secret_zokubzVrZHqSS8Y5aO5TSx3JZlPXhzZiM0EAMjbABPM",
         pageId: "2eb0922b-6e48-4d13-8bba-ab01ae50adba",
         uuId: "23432234-2423-12",
       },
       {
-        pageSyncType:'page',
+        pageSyncType: "page",
         pageTitle: "测试页面1",
         pageSecret: "secret_zokubzVrZHqSS8Y5aO5TSx3JZlPXhzZiM0EAMjbABPM",
         pageId: "2eb0922b-6e48-4d13-8bba-ab01ae50adba",
         uuId: "23432234-2423-12",
       },
       {
-        pageSyncType:'database',
+        pageSyncType: "database",
         pageTitle: "测试页面1",
         pageSecret: "secret_zokubzVrZHqSS8Y5aO5TSx3JZlPXhzZiM0EAMjbABPM",
         pageId: "2eb0922b-6e48-4d13-8bba-ab01ae50adba",
@@ -53,5 +53,23 @@ export const getUserVid = async () => {
       }
     }
     return null;
+  }
+};
+/// 获取扩展的chrome id
+export const getChromeId = () => chrome.runtime.id;
+
+/// 保存同步次数
+export const saveSyncCount = async (count) => {
+  if (VueEnv != "TEST") {
+    await chrome.storage.sync.set({ wx_notion_count: count });
+  }
+};
+/// 获取同步次数
+export const getSyncCount = async () => {
+  if (VueEnv === "TEST") {
+    return 9;
+  } else {
+    const storageConfig = await chrome.storage.sync.get("wx_notion_count");
+    return storageConfig["wx_notion_count"] || 30;
   }
 };

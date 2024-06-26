@@ -32,6 +32,7 @@ const goToWXRead = ()=>{
     flex-direction: column;
     align-items: center;
     height: 600px;
+    width: 50%;
     justify-content: space-around;
 }
 
