@@ -127,6 +127,7 @@ import {
 } from '@element-plus/icons-vue'
 import { getUserInfo } from '../../http/userApi';
 import { getUserVid, getSyncCount } from '../../utils/chrome_util'
+import bus from '../../utils/event_bus'
 import { useRouter } from 'vue-router';
 
 const activeIndex = ref('bookHome')
@@ -143,7 +144,16 @@ const userInfoRef = reactive({
 const userVid = ref('')
 const router = useRouter()
 
+
+
+const handleEvent = ({ data }) => {
+  syncCount.value = data
+};
+
 onMounted(async () => {
+
+  // 监听可以同步的数量
+  bus.on("sync-count-event", handleEvent);
 
   // 获取用户ID
   userVid.value = await getUserVid()

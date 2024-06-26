@@ -1,3 +1,5 @@
+import bus from "./event_bus";
+
 const VueEnv = process.env.VUE_APP_ENV;
 
 /// 保存配置
@@ -62,6 +64,7 @@ export const getChromeId = () => chrome.runtime.id;
 export const saveSyncCount = async (count) => {
   if (VueEnv != "TEST") {
     await chrome.storage.sync.set({ wx_notion_count: count });
+    bus.emit("sync-count-event", { data: count });
   }
 };
 /// 获取同步次数
