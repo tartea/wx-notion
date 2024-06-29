@@ -61,10 +61,12 @@ export const getUserVid = async () => {
 export const getChromeId = () => chrome.runtime.id;
 
 /// 保存同步次数
-export const saveSyncCount = async (count) => {
+export const saveSyncCount = async (dealCount) => {
   if (VueEnv != "TEST") {
-    await chrome.storage.sync.set({ wx_notion_count: count });
-    bus.emit("sync-count-event", { data: count });
+    const syncCount = await getSyncCount();
+    const remainCount = syncCount - dealCount;
+    await chrome.storage.sync.set({ wx_notion_count: remainCount });
+    bus.emit("sync-count-event", { data: remainCount });
   }
 };
 /// 获取同步次数
@@ -73,6 +75,41 @@ export const getSyncCount = async () => {
     return 9;
   } else {
     const storageConfig = await chrome.storage.sync.get("wx_notion_count");
-    return storageConfig["wx_notion_count"] || 30;
+    const count = storageConfig["wx_notion_count"];
+    return count === undefined ? 30 : count;
+  }
+};
+
+/// 保存激活验证
+export const saveChromeActive = async () => {
+  if (VueEnv != "TEST") {
+    await chrome.storage.sync.set({ chrome_active: "active" });
+  }
+};
+
+export const getChromeActive = async () => {
+  if (VueEnv != "TEST") {
+    const storageConfig = await chrome.storage.sync.get("chrome_active");
+    return storageConfig["chrome_active"];
+  }
+};
+
+/// 判断是否可以同步
+export const hasChromeActive = async (dealCount) => {
+  if (VueEnv === "TEST") {
+    return true;
+  } else {
+    const chromeActive = await getChromeActive();
+    const syncCount = await getSyncCount();
+    if ("active" === chromeActive) {
+      return true;
+    }
+    if (syncCount <= 0) {
+      return false;
+    }
+    if (syncCount - dealCount < 0) {
+      return false;
+    }
+    return true;
   }
 };

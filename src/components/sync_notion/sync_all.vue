@@ -48,7 +48,7 @@
 
 <script setup>
 import { ref, defineProps, onMounted } from 'vue';
-import { getNotionConfig, saveSyncCount, getSyncCount } from '../../utils/chrome_util'
+import { getNotionConfig, saveSyncCount, hasChromeActive, getChromeActive } from '../../utils/chrome_util'
 import { syncPage } from '../../http/notionApi'
 import { getAllChapter } from '../../http/bookApi';
 
@@ -56,6 +56,7 @@ const props = defineProps(['bookId'])
 const chromeSettingConfig = ref([])
 const isShowSync = ref(false)
 const locationUrl = ref('')
+const isShowActiveLabel = ref('')
 
 
 onMounted(async () => {
@@ -63,6 +64,8 @@ onMounted(async () => {
     if (chromeSetting) {
         chromeSettingConfig.value = [...chromeSetting]
     }
+    //是否展示label
+    isShowActiveLabel.value = await getChromeActive()
 })
 
 const syncToNotion = async (config) => {
@@ -73,33 +76,26 @@ const syncToNotion = async (config) => {
     });
     try {
 
-        const syncCount = await getSyncCount()
-        if (syncCount <= 0) {
-            ElMessage({
-                message: '已经达到同步的上线。。。',
-                type: 'error',
-            })
-            return
-        }
-
         const chapterInfo = await getAllChapter(props.bookId);
 
         let tempCount = 0;
         for (const item of chapterInfo.chapterChildren) {
             tempCount += item.children.filter(item => item.type === 'quote').length
         }
-        if ((syncCount - tempCount) < 0) {
+        const isActive = await hasChromeActive(tempCount);
+        if (!isActive) {
             ElMessage({
                 message: '已经达到同步的上线。。。',
                 type: 'error',
             })
             return
         }
-
         locationUrl.value = await syncPage(config.pageId, config.pageSecret, chapterInfo.bookTitle,
             chapterInfo.bookAuthor, chapterInfo.bookCover, config.pageSyncType, [...chapterInfo.chapterChildren])
         isShowSync.value = true
-        await saveSyncCount(syncCount - tempCount)
+        if (isShowActiveLabel.value != 'active') {
+            await saveSyncCount(tempCount)
+        }
     } finally {
         loading.close();
     }

@@ -2,7 +2,7 @@
   <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false"
     @select="handleSelect">
     <div class="flex-grow">
-      <div class="flex-grow-vip-text">剩余同步数：{{ syncCount }}/30
+      <div class="flex-grow-vip-text" v-if="isShowActiveLabel != 'active'">剩余同步数：{{ syncCount }}/30
         <div class="flex-grow-vip-btn" @click="isShowVip = true">
           升级享无限同步
           <el-icon>
@@ -27,7 +27,7 @@
   </el-menu>
   <router-view></router-view>
   <el-dialog v-model="isShowVip" title="专业版本授权" :close-on-press-escape="false" width="400" @close="closeDialog">
-    <div v-if="isActiveExtendsion">
+    <div v-if="showActiveExtendsionType == 'buy'">
       <h2 class="vip-mone-text">¥ 8</h2>
       <div>
         <div class="vip-pro-title">专业版本特性：</div>
@@ -90,11 +90,11 @@
         </ol>
       </div>
       <div>
-        <div class="vip-buy-btn">立即购买</div>
-        <div class="vip-active-btn" @click="isActiveExtendsion = false">输入激活码</div>
+        <div class="vip-buy-btn" @click="bugVipCode()">立即购买</div>
+        <div class="vip-active-btn" @click="showActiveExtendsionType = 'active'">输入激活码</div>
       </div>
     </div>
-    <div v-else>
+    <div v-else-if="showActiveExtendsionType == 'active'">
       <div>
         <div>
           <div>
@@ -106,12 +106,30 @@
           <div>
             <div>
               <div class="vip-active-code">
-                <el-input v-model="activeCode" style="width: 340px" size="large" placeholder="请输入激活码"
+                <el-input v-model="activeCodeValue" style="width: 340px" size="large" placeholder="请输入激活码"
                   :prefix-icon="Search" />
               </div>
-              <div class="vip-buy-btn flex-line">立即激活</div>
+              <div class="vip-buy-btn flex-line" @click="activeVipEvent()">立即激活</div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div v-else-if="showActiveExtendsionType == 'explain'">
+      <div>
+        <div>
+          <div>激活须知：</div>
+          <ol>
+            <li>复制激活码</li>
+            <li>发送邮件到1262466460@qq.com</li>
+            <li>邮件主题使用「激活码验证」</li>
+          </ol>
+        </div>
+        <div>
+          <div>激活码:</div>
+          <p class="active_code_p">
+            {{ secretCode }}
+          </p>
         </div>
       </div>
     </div>
@@ -126,15 +144,19 @@ import {
   Search
 } from '@element-plus/icons-vue'
 import { getUserInfo } from '../../http/userApi';
-import { getUserVid, getSyncCount } from '../../utils/chrome_util'
+import { getUserVid, getSyncCount, getChromeId, saveChromeActive, getChromeActive } from '../../utils/chrome_util'
 import bus from '../../utils/event_bus'
+import CryptoJS from "crypto-js";
+
 import { useRouter } from 'vue-router';
 
 const activeIndex = ref('bookHome')
 const isShowVip = ref(false)
-const isActiveExtendsion = ref(true)
-const activeCode = ref('')
+const showActiveExtendsionType = ref('buy')
+const activeCodeValue = ref('')
 const syncCount = ref(30)
+const secretCode = ref('')
+const isShowActiveLabel = ref('')
 
 const userInfoRef = reactive({
   avatarUrl: '',
@@ -144,13 +166,13 @@ const userInfoRef = reactive({
 const userVid = ref('')
 const router = useRouter()
 
-
-
 const handleEvent = ({ data }) => {
   syncCount.value = data
 };
 
 onMounted(async () => {
+  //是否展示label
+  isShowActiveLabel.value = await getChromeActive()
 
   // 监听可以同步的数量
   bus.on("sync-count-event", handleEvent);
@@ -174,7 +196,68 @@ const handleSelect = (routerPath) => {
 }
 
 const closeDialog = () => {
-  isActiveExtendsion.value = true
+  showActiveExtendsionType.value = 'buy'
+}
+// 生成code
+const bugVipCode = () => {
+  // 获取chrome id
+  // 获取用户ID
+  const data = {
+    userVid: userVid.value,
+    chromeId: getChromeId()
+  }
+  secretCode.value = CryptoJS.AES.encrypt(JSON.stringify(data), userVid.value).toString() + "=" + userVid.value
+  showActiveExtendsionType.value = 'explain'
+}
+// 激活
+const activeVipEvent = async () => {
+  if (activeCodeValue.value === undefined || activeCodeValue.value == '') {
+    ElMessage({
+      message: '请输入激活码',
+      type: 'error',
+    })
+  } else {
+    try {
+      const byte = CryptoJS.AES.decrypt(activeCodeValue.value, userVid.value);
+      const originalData = byte.toString(CryptoJS.enc.Utf8)
+      if (originalData === undefined || originalData === '') {
+        ElMessage({
+          message: '激活码有误',
+          type: 'error',
+        })
+        return
+      }
+      const jsonCode = JSON.parse(originalData);
+      const date = new Date()
+      const year = date.getFullYear().toString().padStart(4, "0");
+      const month = (date.getMonth() + 1).toString().padStart(2, "0");
+      const day = date.getDate().toString().padStart(2, "0");
+      const yearTime = `${year}-${month}-${day}`
+
+      const chromeId = getChromeId();
+
+      if (jsonCode['yearTime'] != yearTime || jsonCode['chromeId'] != chromeId) {
+        ElMessage({
+          message: '激活码有误',
+          type: 'error',
+        })
+        return
+      }
+      await saveChromeActive()
+      isShowVip.value = false
+      isShowActiveLabel.value = 'active'
+      ElMessage({
+        message: '激活成功',
+        type: 'success',
+      })
+    } catch (error) {
+      ElMessage({
+        message: '激活码有误',
+        type: 'error',
+      })
+    }
+
+  }
 }
 
 </script>
@@ -262,5 +345,9 @@ const closeDialog = () => {
 .vip-active-code {
   display: flex;
   justify-content: center;
+}
+
+.active_code_p {
+  background-color: rgb(228, 228, 228);
 }
 </style>

@@ -48,13 +48,14 @@
 
 <script setup>
 import { ref, defineProps, onMounted } from 'vue';
-import { getNotionConfig, saveSyncCount, getSyncCount } from '../../utils/chrome_util'
+import { getNotionConfig, saveSyncCount, hasChromeActive, getChromeActive } from '../../utils/chrome_util'
 import { syncPage } from '../../http/notionApi'
 
 const props = defineProps(['bookTitle', 'bookAuthor', 'bookCover', 'clickCardItem', 'headerTitle'])
 const chromeSettingConfig = ref([])
 const isShowSync = ref(false)
 const locationUrl = ref('')
+const isShowActiveLabel = ref('')
 
 
 onMounted(async () => {
@@ -62,6 +63,8 @@ onMounted(async () => {
     if (chromeSetting) {
         chromeSettingConfig.value = [...chromeSetting]
     }
+    //是否展示label
+    isShowActiveLabel.value = await getChromeActive()
 })
 
 const syncToNotion = async (config) => {
@@ -89,9 +92,8 @@ const syncToNotion = async (config) => {
             headerTitle: props.headerTitle,
             children: children
         }]
-
-        const syncCount = await getSyncCount()
-        if (syncCount <= 0) {
+        const isActive = await hasChromeActive(1);
+        if (!isActive) {
             ElMessage({
                 message: '已经达到同步的上线。。。',
                 type: 'error',
@@ -100,7 +102,9 @@ const syncToNotion = async (config) => {
         }
         locationUrl.value = await syncPage(config.pageId, config.pageSecret, props.bookTitle, props.bookAuthor, props.bookCover, config.pageSyncType, chapterList)
         isShowSync.value = true
-        await saveSyncCount((syncCount - 1))
+        if (isShowActiveLabel.value != 'active') {
+            await saveSyncCount(1)
+        }
     } finally {
         loading.close();
     }
