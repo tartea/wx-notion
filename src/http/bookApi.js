@@ -1,7 +1,6 @@
 import axios from "axios";
 import request from "./http";
 
-const VueEnv = process.env.VUE_APP_ENV;
 
 // 获取所有书籍
 export async function getNotebooks() {
@@ -185,9 +184,5 @@ export async function getAllChapter(bookId) {
 }
 
 function changeRequestMethod(httpMethod, localMethod) {
-  if (VueEnv === "TEST") {
-    return localMethod();
-  } else {
-    return httpMethod();
-  }
+  return httpMethod();
 }

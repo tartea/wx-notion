@@ -37,6 +37,7 @@ service.interceptors.response.use(
                 type: 'error',
             })
         }
+        return Promise.reject(error)
     }
 )
 

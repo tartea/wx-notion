@@ -179,14 +179,18 @@ onMounted(async () => {
 
   // 获取用户ID
   userVid.value = await getUserVid()
+
   syncCount.value = await getSyncCount()
 
   const userInfo = await getUserInfo(userVid.value)
-  if (userInfo) {
-    userInfoRef.authorName = userInfo.name
-    userInfoRef.avatarUrl = userInfo.avatar
+  if (userInfo === undefined || userInfo.errCode != '') {
+    router.push({ path: '/login', replace: true })
+    return
   }
+  userInfoRef.authorName = userInfo.name
+  userInfoRef.avatarUrl = userInfo.avatar
   router.replace({ path: '/bookHome' });
+
 })
 const handleSelect = (routerPath) => {
   if (routerPath === 'noRouter') {

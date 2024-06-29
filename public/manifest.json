@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "wx-notion",
-    "description": "A minimal example of a chrome extension using manifest v3",
-    "version": "0.0.1",
+    "name": "SyncChat",
+    "description": "方便同步微信读书的想法到notion",
+    "version": "1.0.0",
     "icons": {
         "16": "logo/logo-16.png",
         "48": "logo/logo-48.png",
@@ -15,7 +15,7 @@
       "open_in_tab": true
     },
     "action": {
-        "default_title": "WNotion"
+        "default_title": "SyncWeChatIdea"
     },
     "permissions": ["storage","cookies"],
     "host_permissions": [

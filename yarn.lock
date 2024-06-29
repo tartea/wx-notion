@@ -6083,7 +6083,7 @@
 
 "terser-webpack-plugin@^5.1.1", "terser-webpack-plugin@^5.3.10":
   "integrity" "sha512-BKFPWlPDndPs+NGGCr1U59t0XScL5317Y0UReNrHaw9/FwhPENlq6bfgs+4yPfyP51vqC1bQ4rp1EfXW5ZSH9w=="
-  "resolved" "https://registry.npmmirror.com/terser-webpack-plugin/-/terser-webpack-plugin-5.3.10.tgz"
+  "resolved" "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-5.3.10.tgz"
   "version" "5.3.10"
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.20"

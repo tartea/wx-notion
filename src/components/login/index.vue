@@ -3,11 +3,11 @@
     <div class="wx-login">
         <div class="wx-header">
             <div class="wx-logo">
-                <router-link to="/">
+                <router-link to="/bookHome">
                     <img src="/logo/logo.svg" />
                 </router-link>
             </div>
-            <div class="wx-title">WNotion</div>
+            <div class="wx-title">SyncChat</div>
             <div class="wx-remark">同步读书笔记</div>
         </div>
         <div class="wx-footer">
@@ -15,7 +15,7 @@
                     登陆微信读书网页端
             </div>
 
-            <div class="wx-remark">使用 WNotion, 请先完成微信读书登录</div>
+            <div class="wx-remark">使用 SyncChat, 请先完成微信读书登录</div>
         </div>
     </div>
 </template>
