@@ -3,7 +3,7 @@
     <div class="wx-login">
         <div class="wx-header">
             <div class="wx-logo">
-                <router-link to="/bookHome">
+                <router-link to="/">
                     <img src="/logo/logo.svg" />
                 </router-link>
             </div>

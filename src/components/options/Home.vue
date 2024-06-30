@@ -183,7 +183,7 @@ onMounted(async () => {
   syncCount.value = await getSyncCount()
 
   const userInfo = await getUserInfo(userVid.value)
-  if (userInfo === undefined || userInfo.errCode != '') {
+  if (userInfo === undefined || userInfo.errCode != undefined) {
     router.push({ path: '/login', replace: true })
     return
   }
