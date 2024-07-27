@@ -92,19 +92,9 @@ const syncToNotion = async (config) => {
             headerTitle: props.headerTitle,
             children: children
         }]
-        const isActive = await hasChromeActive(1);
-        if (!isActive) {
-            ElMessage({
-                message: '已经达到同步的上线。。。',
-                type: 'error',
-            })
-            return
-        }
+
         locationUrl.value = await syncPage(config.pageId, config.pageSecret, props.bookTitle, props.bookAuthor, props.bookCover, config.pageSyncType, chapterList)
         isShowSync.value = true
-        if (isShowActiveLabel.value != 'active') {
-            await saveSyncCount(1)
-        }
     } finally {
         loading.close();
     }
